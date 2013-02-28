@@ -2,28 +2,37 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-    <script src="../jquery.yaselect.min.js"></script>
+    <script src="../jquery.yaselect.js"></script>
     <style>
       /* base style */
-      body, select { font-family: "Helvetica"; }
+      body, select { font-family: "Helvetica"; font-size: 15px; }
       label { font-weight: bold; font-size: 1.1em; }
       dt, dd { margin-left: 0; padding-left: 0; }
       .hint { font-size: 0.85em; color: #aaa; margin-left: 1em; }
+	  
+	  #select1 { width: 300px; }
     </style>
     <style>
       /* yaselect styling */
-      .yaselect-wrap { border: 1px solid #ddd; border-radius: 3px; padding: 1.5px 0; margin: 0; }
-      .yaselect-wrap, .yaselect-current { cursor: pointer; display: block; }
-      .yaselect-wrap, .yaselect-select { width: 300px; font-size: 15px; }
+      .yaselect-current {
+		border: 1px solid #ddd; border-radius: 3px;
+-webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+        box-sizing: border-box;
+		cursor: pointer;
+		height: 1.3em; /* extra 0.1em to allow for the 1px border top and bottom */
+		line-height: 1.2em;
+		padding: 0 0 0 0.25em;
+		margin: 0;
+	  }
+      .yaselect-current { background: url('down.png') no-repeat right center; }
+      .yaselect-open .yaselect-current { background-image: url('up.png'); }
       .yaselect-select { margin-top: 0; padding-top: 0; }
-      .yaselect-current { background: url('arrowdown.png') no-repeat right center; }
-      .yaselect-open .yaselect-current { background-image: url('arrowup.png'); }
       
 	  /* custom styling */
 	  .yaselect-current {
 		height: 32px;
 		line-height: 32px;
-		padding-left: 4px;
 		}
     </style>
   </head>
